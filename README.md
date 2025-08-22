@@ -1,69 +1,72 @@
-# ⭐️ Project: Customer Churn Analysis at Telecom X  
+# ⭐️ Proyecto: Análisis de Cancelación de Clientes en Telecom X  
 
-⭐️ **Overview**  
-This project analyzes customer churn at Telecom X, aiming to predict which users are most likely to leave the service. Through data cleaning, exploratory analysis, and predictive modeling, the goal is to derive strategic insights to improve customer retention.  
+⭐️ **Descripción General**  
+Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo de predecir qué usuarios tienen mayor probabilidad de abandonar el servicio. A través de la limpieza de datos, análisis exploratorio y modelado predictivo, se buscan insights estratégicos para mejorar la retención de clientes.  
 
-⭐️ **Project Files**  
-- `TelecomX_LATAM.ipynb` → Notebook containing the full analysis.  
-- `Dataset.csv` → Preprocessed data.  
-- `README.md` → Explanatory documentation.  
+⭐️ **Archivos del Proyecto**  
+- `TelecomX_LATAM.ipynb` → Notebook que contiene el análisis completo.  
+- `Dataset.csv` → Datos preprocesados.  
+- `README.md` → Documentación explicativa.  
 
-⭐️ **Tools and Libraries**  
+⭐️ **Herramientas y Librerías**  
 - Python 3.x  
 - Pandas, NumPy  
 - Matplotlib, Seaborn, Plotly  
 - Scikit-learn  
 - Jupyter Notebook  
 
-⭐️ **Environment Setup**  
+⭐️ **Configuración del Entorno**  
 ```bash
 git clone https://github.com/renzolea/TelecomX-Churn-Analysis
 pip install pandas numpy matplotlib seaborn plotly scikit-learn
 jupyter notebook TelecomX_LATAM.ipynb
-⭐️ Methodological Workflow
 
-- Data cleaning and preparation.
-- Conduct exploratory data analysis with visualizations.
-- Split dataset into training (70%) and testing (30%).
-- Build predictive models: Decision Tree and Random Forest.
-- Evaluate models using Accuracy, Precision, Recall, F1-score, and confusion matrix.
-- Identify the most influential features for churn prediction.
+⭐️ Metodologia
+⭐️ Flujo Metodológico
 
-⭐️ Comparative Results
+- Preparación y limpieza de datos.  
+- Análisis exploratorio con visualizaciones.  
+- División del conjunto de datos en entrenamiento (70%) y prueba (30%).  
+- Construcción de modelos predictivos: Árbol de Decisión y Random Forest.  
+- Evaluación de los modelos utilizando Exactitud (Accuracy), Precisión, Recall, F1-score y matriz de confusión.  
+- Identificación de las variables más influyentes para la predicción de cancelaciones.  
 
-| Model           | Accuracy | Precision | Recall  | F1-score |
-|-----------------|----------|-----------|---------|----------|
-| Decision Tree   | 72.41%   | 48.06%    | 48.66%  | 0.4836   |
-| Random Forest   | 78.32%   | 61.17%    | 50.27%  | 0.5519   |
+⭐️ Resultados Comparativos
 
-⭐️ Results Interpretation
+| Modelo           | Exactitud | Precisión | Recall  | F1-score |
+|-----------------|-----------|-----------|---------|----------|
+| Árbol de Decisión | 72.41%    | 48.06%    | 48.66%  | 0.4836   |
+| Random Forest     | 78.32%    | 61.17%    | 50.27%  | 0.5519   |
 
-- Random Forest outperforms the Decision Tree in Accuracy, Precision, and F1-score, reducing errors when predicting churn.
-- Recall for both models is approximately 50%, showing room for improvement in capturing all actual churned customers.
+⭐️ Interpretación de Resultados
+
+- Random Forest supera al Árbol de Decisión en Exactitud, Precisión y F1-score, mostrando menor error al predecir cancelaciones.  
+- El Recall en ambos modelos es cercano al 50%, lo que indica que aún hay espacio para mejorar la detección de clientes que realmente cancelan.  
 
 ⭐️ Overfitting / Underfitting
 
-- **Decision Tree**: Performance limited (72% Accuracy), likely underfitting due to oversimplified structure.
-  - 🔧 Recommendation: adjust `max_depth` between 5–10, increase `min_samples_split` and `min_samples_leaf`.
-- **Random Forest**: Better generalization (78% Accuracy), though low Recall indicates bias toward the majority class (non-churn).
-  - 🔧 Recommendation: use `class_weight="balanced"`, increase `n_estimators` (≥300), tune `max_depth` and `max_features`, and optimize using GridSearchCV.
+- **Árbol de Decisión**: Rendimiento limitado (72% de Exactitud), probablemente presenta underfitting por ser un modelo demasiado simple.  
+  - 🔧 Recomendación: ajustar `max_depth` entre 5 y 10, incrementar `min_samples_split` y `min_samples_leaf`.  
+- **Random Forest**: Buena generalización (78% de Exactitud), aunque el bajo Recall refleja tendencia hacia la clase mayoritaria (clientes que no cancelan).  
+  - 🔧 Recomendación: usar `class_weight="balanced"`, aumentar `n_estimators` (≥300), ajustar `max_depth` y `max_features`, y optimizar con GridSearchCV.  
 
-⭐️ Most Influential Variables
+⭐️ Variables Más Influyentes
 
-- Customer tenure (Tenure)
-- Contract type
-- Monthly charges
-- Payment method
-- Internet service type
+- Antigüedad del cliente (Tenure)  
+- Tipo de contrato  
+- Cargos mensuales  
+- Método de pago  
+- Tipo de servicio de internet  
 
-⭐️ Conclusions and Strategic Recommendations
+⭐️ Conclusiones y Recomendaciones Estratégicas
 
-- Random Forest is the most robust model for churn prediction, offering a balance between Accuracy and Precision while maintaining detection ability.
-- High-risk customers: those with monthly contracts, low tenure, and high monthly charges.
-- Recommended retention strategies: early loyalty programs, incentives for long-term contracts, pricing adjustments, and personalized service experiences.
+- Random Forest se confirma como el modelo más confiable para predecir cancelaciones, equilibrando Exactitud y Precisión sin perder capacidad de detección.  
+- Clientes de mayor riesgo: aquellos con contratos mensuales, baja antigüedad y cargos mensuales altos.  
+- Estrategias de retención recomendadas: planes de fidelización temprana, incentivos para contratos largos, ajustes en la estructura de precios y personalización de la experiencia según el tipo de servicio.  
 
-⭐️ Authorship
+⭐️ Autoría
 
-Project developed by **Renzo Lea** as part of the Alura Latam Data Science challenge.
+Proyecto desarrollado por **Renzo Lea** en el marco del reto de Ciencia de Datos de Alura Latam.  
 
-© 2025 – Customer Churn Analysis – Data Science Project
+© 2025 – Análisis de Cancelación de Clientes – Proyecto de Ciencia de Datos
+
