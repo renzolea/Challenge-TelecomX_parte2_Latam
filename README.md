@@ -1,97 +1,69 @@
-# ⭐️ Telecom X – Predicción de Cancelación de Clientes (Churn)
+# ⭐️ Project: Customer Churn Analysis at Telecom X  
 
-## 💡 Introducción del Proyecto
-Este proyecto aborda el desafío de **predecir la cancelación de clientes en Telecom X**, una empresa que enfrenta una tasa elevada de deserción. El objetivo principal es construir un pipeline robusto que permita anticipar qué clientes tienen mayor probabilidad de cancelar sus servicios, utilizando modelos de Machine Learning y análisis de datos para generar conclusiones estratégicas que impulsen la retención.
+⭐️ **Overview**  
+This project analyzes customer churn at Telecom X, aiming to predict which users are most likely to leave the service. Through data cleaning, exploratory analysis, and predictive modeling, the goal is to derive strategic insights to improve customer retention.  
 
----
+⭐️ **Project Files**  
+- `TelecomX_LATAM.ipynb` → Notebook containing the full analysis.  
+- `Dataset.csv` → Preprocessed data.  
+- `README.md` → Explanatory documentation.  
 
-## 🎯 Objetivos del Proyecto
-- Preparar y preprocesar los datos para el modelado.  
-- Realizar análisis exploratorio y selección de variables clave.  
-- Construir y entrenar modelos de clasificación supervisada.  
-- Evaluar el rendimiento con métricas de desempeño.  
-- Interpretar resultados y extraer insights estratégicos.  
-- Proponer acciones de negocio para reducir la cancelación.  
+⭐️ **Tools and Libraries**  
+- Python 3.x  
+- Pandas, NumPy  
+- Matplotlib, Seaborn, Plotly  
+- Scikit-learn  
+- Jupyter Notebook  
 
----
+⭐️ **Environment Setup**  
+```bash
+git clone https://github.com/renzolea/TelecomX-Churn-Analysis
+pip install pandas numpy matplotlib seaborn plotly scikit-learn
+jupyter notebook TelecomX_LATAM.ipynb
+⭐️ Methodological Workflow
 
-## 🧰 Preparación de los Datos
-- Archivo CSV limpio y normalizado como base.  
-- Eliminación de columnas irrelevantes (ej. *customerID*, *account.Charges.Total*).  
-- Codificación de variables categóricas (One-Hot Encoding y binarización).  
-- Análisis de la proporción de clientes que cancelaron (churn).  
-- Recomendación de aplicar técnicas de balanceo como **SMOTE** en caso de fuerte desbalance.  
-- Normalización opcional para modelos sensibles a escala (Logistic Regression, KNN).  
+- Data cleaning and preparation.
+- Conduct exploratory data analysis with visualizations.
+- Split dataset into training (70%) and testing (30%).
+- Build predictive models: Decision Tree and Random Forest.
+- Evaluate models using Accuracy, Precision, Recall, F1-score, and confusion matrix.
+- Identify the most influential features for churn prediction.
 
----
+⭐️ Comparative Results
 
-## 🔎 Análisis Exploratorio y Selección de Variables
-- Construcción de la **matriz de correlación** para identificar relaciones con la variable objetivo.  
-- Evaluación de variables relevantes como *tiempo de contrato* y *gasto mensual* mediante gráficos (boxplots, scatter plots).  
-- Selección de variables más significativas para alimentar los modelos.  
+| Model           | Accuracy | Precision | Recall  | F1-score |
+|-----------------|----------|-----------|---------|----------|
+| Decision Tree   | 72.41%   | 48.06%    | 48.66%  | 0.4836   |
+| Random Forest   | 78.32%   | 61.17%    | 50.27%  | 0.5519   |
 
----
+⭐️ Results Interpretation
 
-## 🤖 Modelado Predictivo
-- División de datos en entrenamiento y prueba (70%-30%).  
-- Entrenamiento de dos modelos base para comparación:  
-  - **Árbol de Decisión**  
-  - **Random Forest**  
-- Normalización aplicada solo en modelos sensibles, no en árboles.  
-- Métricas evaluadas:  
-  - Exactitud (Accuracy)  
-  - Precisión  
-  - Recall  
-  - F1-score  
-  - Matriz de confusión  
+- Random Forest outperforms the Decision Tree in Accuracy, Precision, and F1-score, reducing errors when predicting churn.
+- Recall for both models is approximately 50%, showing room for improvement in capturing all actual churned customers.
 
----
+⭐️ Overfitting / Underfitting
 
-## 📊 Resultados y Evaluación
-| Modelo              | Exactitud | Precisión | Recall | F1-score |
-|----------------------|-----------|-----------|--------|----------|
-| Árbol de Decisión    | 72.60%    | 48.44%    | 49.91% | 49.17%   |
-| Random Forest        | 78.04%    | 60.71%    | 49.02% | 54.24%   |
+- **Decision Tree**: Performance limited (72% Accuracy), likely underfitting due to oversimplified structure.
+  - 🔧 Recommendation: adjust `max_depth` between 5–10, increase `min_samples_split` and `min_samples_leaf`.
+- **Random Forest**: Better generalization (78% Accuracy), though low Recall indicates bias toward the majority class (non-churn).
+  - 🔧 Recommendation: use `class_weight="balanced"`, increase `n_estimators` (≥300), tune `max_depth` and `max_features`, and optimize using GridSearchCV.
 
-- **Random Forest** tuvo mejor desempeño general, especialmente en exactitud y precisión.  
-- Ambos modelos muestran un **recall moderado**, lo que refleja oportunidades de mejora en la detección de clientes que realmente cancelan.  
-- Posibles signos de **underfitting** en el Árbol de Decisión.  
+⭐️ Most Influential Variables
 
----
+- Customer tenure (Tenure)
+- Contract type
+- Monthly charges
+- Payment method
+- Internet service type
 
-## 📈 Importancia de las Variables
-Las variables con mayor impacto en la predicción del churn fueron:  
-- **Tenure** (tiempo como cliente).  
-- **Tipo de contrato** (mensual vs anual).  
-- **Cargos mensuales**.  
-- **Tipo de servicio de internet**.  
-- **Facturación sin papel**.  
+⭐️ Conclusions and Strategic Recommendations
 
-Estas variables permiten diseñar **acciones estratégicas** para mitigar la cancelación y mejorar la fidelización.  
+- Random Forest is the most robust model for churn prediction, offering a balance between Accuracy and Precision while maintaining detection ability.
+- High-risk customers: those with monthly contracts, low tenure, and high monthly charges.
+- Recommended retention strategies: early loyalty programs, incentives for long-term contracts, pricing adjustments, and personalized service experiences.
 
----
+⭐️ Authorship
 
-## 💡 Conclusiones y Recomendaciones Estratégicas
-- Priorizar campañas de retención en **clientes nuevos** o con **contratos mes a mes**.  
-- Incentivar la **contratación anual o bianual** para reforzar la fidelización.  
-- Ajustar planes de precios para mejorar la **percepción de valor**.  
-- Personalizar la experiencia según el **tipo de servicio contratado**.  
-- Promover la **facturación digital** y comunicación proactiva para reforzar la relación con el cliente.  
+Project developed by **Renzo Lea** as part of the Alura Latam Data Science challenge.
 
----
-
-## 📚 Recursos y Referencias
-- Alura – Codificación categórica en ML.  
-- Alura – Técnicas de balanceo de clases.  
-- Medium – Normalización y estandarización en ML.  
-
----
-
-## 👨‍💻 Autor
-**Renzo Lea**  
-Proyecto desarrollado como parte del **Reto de Ciencia de Datos – Alura Latam**  
-
-© 2025 Estudio sobre Deserción de Clientes – Proyecto de Ciencia de Datos
-
-
-
+© 2025 – Customer Churn Analysis – Data Science Project
