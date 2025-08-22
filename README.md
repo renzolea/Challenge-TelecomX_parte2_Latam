@@ -4,8 +4,8 @@
 Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo de predecir qué usuarios tienen mayor probabilidad de abandonar el servicio. A través de la limpieza de datos, análisis exploratorio y modelado predictivo, se buscan insights estratégicos para mejorar la retención de clientes.  
 
 ⭐️ **Archivos del Proyecto**  
-- `TelecomX_LATAM.ipynb` → Notebook que contiene el análisis completo.  
-- `Dataset.csv` → Datos preprocesados.  
+- `TelecomX_LATAM_2.ipynb` → Notebook que contiene el análisis completo.  
+- `data.csv` → Datos preprocesados.  
 - `README.md` → Documentación explicativa.  
 
 ⭐️ **Herramientas y Librerías**  
@@ -52,15 +52,14 @@ Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo 
 - Método de pago  
 - Tipo de servicio de internet  
 
-⭐️ Conclusiones y Recomendaciones Estratégicas
+⭐️ Conclusiones y recomendaciones
 
 - Random Forest se confirma como el modelo más confiable para predecir cancelaciones, equilibrando Exactitud y Precisión sin perder capacidad de detección.  
 - Clientes de mayor riesgo: aquellos con contratos mensuales, baja antigüedad y cargos mensuales altos.  
 - Estrategias de retención recomendadas: planes de fidelización temprana, incentivos para contratos largos, ajustes en la estructura de precios y personalización de la experiencia según el tipo de servicio.  
 
-⭐️ Autoría
+⭐️ Autor
 
 Proyecto desarrollado por **Renzo Lea** en el marco del reto de Ciencia de Datos de Alura Latam.  
 
 © 2025 – Análisis de Cancelación de Clientes – Proyecto de Ciencia de Datos
-
