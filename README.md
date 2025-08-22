@@ -3,6 +3,14 @@
 ⭐️ **Descripción General**  
 Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo de predecir qué usuarios tienen mayor probabilidad de abandonar el servicio. A través de la limpieza de datos, análisis exploratorio y modelado predictivo, se buscan insights estratégicos para mejorar la retención de clientes.  
 
+⭐️ **Descripción del Desafío**  
+Telecom X enfrenta altos índices de cancelación de clientes, lo que afecta sus ingresos y crecimiento sostenido. El desafío consiste en identificar patrones de comportamiento de los usuarios que permitan anticipar la cancelación y diseñar estrategias de retención efectivas. 
+
+⭐️ **Metas del Proyecto**  
+- Predecir con precisión qué clientes tienen mayor probabilidad de cancelar.  
+- Identificar las variables más influyentes que determinan la cancelación.  
+- Proponer recomendaciones basadas en datos para mejorar la retención de clientes.
+  
 ⭐️ **Archivos del Proyecto**  
 - `TelecomX_LATAM_2.ipynb` → Notebook que contiene el análisis completo.  
 - `data.csv` → Datos preprocesados.  
@@ -16,16 +24,23 @@ Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo 
 - Jupyter Notebook  
 
 ⭐️ **Configuración del Entorno**  
-⭐️ Flujo Metodológico
 
-- Preparación y limpieza de datos.  
-- Análisis exploratorio con visualizaciones.  
+⭐️ **Procesamiento y Limpieza de Datos**  
+- Identificación y manejo de valores faltantes y duplicados.  
+- Conversión de variables categóricas a numéricas mediante codificación.  
+- Normalización y escalado de variables numéricas según sea necesario.  
+
+⭐️ **Análisis Exploratorio y Selección de Características**  
+- Visualización de distribuciones, correlaciones y patrones de cancelación.  
+- Detección de relaciones entre variables predictoras y variable objetivo.  
+- Selección de características más relevantes usando técnicas estadísticas y de importancia de variables.  
+
+⭐️ **Creación del Modelo Predictivo**  
 - División del conjunto de datos en entrenamiento (70%) y prueba (30%).  
-- Construcción de modelos predictivos: Árbol de Decisión y Random Forest.  
-- Evaluación de los modelos utilizando Exactitud (Accuracy), Precisión, Recall, F1-score y matriz de confusión.  
-- Identificación de las variables más influyentes para la predicción de cancelaciones.  
+- Entrenamiento de modelos de Árbol de Decisión y Random Forest.  
+- Optimización de hiperparámetros mediante GridSearchCV y validación cruzada.  
 
-⭐️ Resultados Comparativos
+⭐️ **Resultados y Evaluación del Desempeño**  
 
 | Modelo           | Exactitud | Precisión | Recall  | F1-score |
 |-----------------|-----------|-----------|---------|----------|
@@ -44,7 +59,7 @@ Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo 
 - **Random Forest**: Buena generalización (78% de Exactitud), aunque el bajo Recall refleja tendencia hacia la clase mayoritaria (clientes que no cancelan).  
   - 🔧 Recomendación: usar `class_weight="balanced"`, aumentar `n_estimators` (≥300), ajustar `max_depth` y `max_features`, y optimizar con GridSearchCV.  
 
-⭐️ Variables Más Influyentes
+⭐️ Relevancia de las Variables
 
 - Antigüedad del cliente (Tenure)  
 - Tipo de contrato  
