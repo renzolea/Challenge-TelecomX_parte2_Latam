@@ -40,7 +40,7 @@ Telecom X enfrenta altos índices de cancelación de clientes, lo que afecta sus
 - Entrenamiento de modelos de Árbol de Decisión y Random Forest.  
 - Optimización de hiperparámetros mediante GridSearchCV y validación cruzada.  
 
-⭐️ **Resultados y Evaluación del Desempeño**  
+⭐️ **Resultados del Desempeño**  
 
 | Modelo           | Exactitud | Precisión | Recall  | F1-score |
 |-----------------|-----------|-----------|---------|----------|
