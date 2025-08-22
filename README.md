@@ -16,11 +16,9 @@ Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo 
 - Jupyter Notebook  
 
 ⭐️ **Configuración del Entorno**  
-git clone https://github.com/renzolea/TelecomX-Churn-Analysis
-pip install pandas numpy matplotlib seaborn plotly scikit-learn
-jupyter notebook TelecomX_LATAM.ipynb
 
 ⭐️ Metodologia
+
 ⭐️ Flujo Metodológico
 
 - Preparación y limpieza de datos.  
