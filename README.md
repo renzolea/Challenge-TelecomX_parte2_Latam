@@ -16,9 +16,6 @@ Este proyecto analiza la cancelación de clientes en Telecom X, con el objetivo 
 - Jupyter Notebook  
 
 ⭐️ **Configuración del Entorno**  
-
-⭐️ Metodologia
-
 ⭐️ Flujo Metodológico
 
 - Preparación y limpieza de datos.  
